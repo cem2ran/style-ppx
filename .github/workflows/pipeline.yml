@@ -1,4 +1,4 @@
-name: ppx_style pipeline
+name: style-ppx pipeline
 
 on:
   push:
