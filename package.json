@@ -1,9 +1,9 @@
 {
-  "name": "@jchavarri/ppx_42",
-  "version": "0.0.4",
+  "name": "@cem2ran/ppx_style",
+  "version": "0.0.1",
   "description": "A tiny ppx for learning purposes",
-  "repository": "https://github.com/jchavarri/hello-ppx-esy",
-  "author": "Javier Chávarri <javier.chavarri@gmail.com>",
+  "repository": "https://github.com/cem2ran/ppx-style",
+  "author": "Cem Turan <cem2ran@gmail.com>",
   "license": "MIT",
   "scripts": {
     "postinstall": "node ./copyPlatformBinaryInPlace.js"

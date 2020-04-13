@@ -3,12 +3,10 @@
   "version": "0.0.1",
   "license": "MIT",
   "esy": {
-    "build": [
-      "dune build -p my_native_app"
-    ]
+    "build": ["dune build -p my_native_app"]
   },
   "dependencies": {
-    "ppx_42": "*",
+    "ppx_style": "*",
     "ocaml": "~4.6.1000",
     "@opam/dune": "*",
     "@opam/reason": "*"
@@ -17,6 +15,6 @@
     "@opam/merlin": "*"
   },
   "resolutions": {
-    "ppx_42": "link-dev:.."
+    "ppx_style": "link-dev:.."
   }
 }
