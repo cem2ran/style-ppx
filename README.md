@@ -1,21 +1,28 @@
-# hello-ppx-esy
+# style-ppx
 
 ![](https://github.com/cem2ran/style-ppx/workflows/ppx_style%20pipeline/badge.svg)
 
 A project that includes the minimum configuration for a [ppx](https://blog.hackages.io/reasonml-ppx-8ecd663d5640) called `ppx_style`, a project that uses Reason and [Esy](https://github.com/esy-ocaml/esy).
 
-`ppx_style` implements a very basic ppx that transforms the `[%gimme]` extension into the number literal `42`.
+`ppx_style` implements a ppx that applies the record or object to the `make` function defined in the Style module.
 
 So, the code:
 
 ```reason
-let fourtyTwo = string_of_int([%gimme]);
+
+module Style = {
+    let make = (~backgroundColor, ~width, ~height, ()) = ...;
+};
+
+Style({backgroundColor: "papayawhip", width: 42.->dp, height: 42.->dp});
+// or
+Style({"backgroundColor": "papayawhip", "width": 42.->dp, "height": 42.->dp});
 ```
 
 Is transformed into:
 
 ```reason
-let fourtyTwo = string_of_int(42);
+make(~backgroundColor="papayawhip", ~width=42.->dp, ~height=42.->dp, ());
 ```
 
 ## Files and folders
