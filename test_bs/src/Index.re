@@ -19,6 +19,9 @@ module ImageStyle = {
 
 open Style;
 
+Style {backgroundColor: "papayawhip", width: 42.->dp, height: 42.->dp};
+Style({backgroundColor: "papayawhip", width: 42.->dp, height: 42.->dp});
+Style {"backgroundColor": "papayawhip", "width": 42.->dp, "height": 42.->dp};
 Style({"backgroundColor": "papayawhip", "width": 42.->dp, "height": 42.->dp});
 
 // Compiles to:

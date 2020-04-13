@@ -35,6 +35,19 @@ let should_rewrite = ref(false);
 
 let rec expr = (mapper, e) =>
   switch (e.pexp_desc) {
+  /* X({ aaa: vvv }) */
+  | Pexp_construct(
+      {txt: longident, loc},
+      Some({
+        pexp_desc: Pexp_tuple([{pexp_desc: Pexp_record(fields, None)}]),
+        _,
+      }),
+    )
+  /* X { aaa: vvv } */
+  | Pexp_construct(
+      {txt: longident, loc},
+      Some({pexp_desc: Pexp_record(fields, None), _}),
+    )
   /* X({ "aaa": vvv }) */
   | Pexp_construct(
       {txt: longident, loc},
