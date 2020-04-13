@@ -122,23 +122,6 @@ let rec expr = (mapper, e) =>
     ) =>
     let args = [(Nolabel, unit(~loc, ()))];
     Exp.apply(~loc, mk_func(~loc, longident), args);
-  /* Object without constructor: {"x": v} */
-  | [@implicit_arity]
-    Pexp_extension(
-      {txt: "bs.obj", _},
-      PStr([
-        {
-          pstr_desc:
-            [@implicit_arity]
-            Pstr_eval(
-              {pexp_desc: [@implicit_arity] Pexp_record(_fields, None), _},
-              _,
-            ),
-          _,
-        },
-      ]),
-    ) =>
-    fail(e.pexp_loc, "Object literal without annotation")
   | _ => default_mapper.expr(mapper, e)
   };
 
