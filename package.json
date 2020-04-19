@@ -1,6 +1,6 @@
 {
   "name": "@cem2ran/ppx_style",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "A tiny ppx for learning purposes",
   "repository": "https://github.com/cem2ran/ppx-style",
   "author": "Cem Turan <cem2ran@gmail.com>",
