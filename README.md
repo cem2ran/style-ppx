@@ -14,9 +14,17 @@ module Style = {
     let make = (~backgroundColor, ~width, ~height, ()) = ...;
 };
 
+// Record style
 Style({backgroundColor: "papayawhip", width: 42.->dp, height: 42.->dp});
-// or
+// Object style
 Style({"backgroundColor": "papayawhip", "width": 42.->dp, "height": 42.->dp});
+// dp is also now the default for float values for attributes of "size" type
+Style({
+  backgroundColor: "papayawhip",
+  width: 42., // <-- look ma no dp!
+  height: 42.->dp,
+  flex: 1., // <-- ppx does not touch this because it isn't a "size" attribute
+});
 ```
 
 Is transformed into:

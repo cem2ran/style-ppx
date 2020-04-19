@@ -19,10 +19,17 @@ module ImageStyle = {
 
 open Style;
 
-Style {backgroundColor: "papayawhip", width: 42.->dp, height: 42.->dp};
+// Record style
 Style({backgroundColor: "papayawhip", width: 42.->dp, height: 42.->dp});
-Style {"backgroundColor": "papayawhip", "width": 42.->dp, "height": 42.->dp};
+// Object style
 Style({"backgroundColor": "papayawhip", "width": 42.->dp, "height": 42.->dp});
+// dp is also now the default for float values for attributes of "size" type
+Style({
+  backgroundColor: "papayawhip",
+  width: 42., // <-- look ma no dp!
+  height: 42.->dp,
+  flex: 1. // <-- ppx does not touch this because it isn't a "size" attribute
+});
 
 // Compiles to:
 

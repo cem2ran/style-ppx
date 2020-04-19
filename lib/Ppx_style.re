@@ -33,6 +33,30 @@ let unit = (~loc=?, ()) =>
 
 let should_rewrite = ref(false);
 
+let sizeValues = [
+  "bottom",
+  "_end",
+  "height",
+  "left",
+  "maxHeight",
+  "maxWidth",
+  "minHeight",
+  "minWidth",
+  "padding",
+  "paddingBottom",
+  "paddingEnd",
+  "paddingHorizontal",
+  "paddingLeft",
+  "paddingRight",
+  "paddingStart",
+  "paddingTop",
+  "paddingVertical",
+  "right",
+  "start",
+  "top",
+  "width",
+];
+
 let rec expr = (mapper, e) =>
   switch (e.pexp_desc) {
   /* X({ aaa: vvv }) */
@@ -96,9 +120,32 @@ let rec expr = (mapper, e) =>
     ) =>
     let field_to_arg = field =>
       switch (field) {
-      | ({txt: Lident(name), _}, value) => (
+      | ({txt: Lident(name), loc, _}, value) => (
           Labelled(name),
-          expr(mapper, value),
+          expr(
+            mapper,
+            switch (value) {
+            | {
+                pexp_desc:
+                  Pexp_constant(Pconst_float(string, _) as numeric_value),
+                pexp_loc,
+              } as v
+                when sizeValues |> List.mem(name) => {
+                ...v,
+                pexp_desc:
+                  Pexp_apply(
+                    {...v, pexp_desc: Pexp_ident({loc, txt: Lident("dp")})},
+                    [
+                      (
+                        Nolabel,
+                        {...v, pexp_desc: Pexp_constant(numeric_value)},
+                      ),
+                    ],
+                  ),
+              }
+            | _ => value
+            },
+          ),
         )
       | _ => assert(false) /* invalid field name */
       };
