@@ -1,4 +1,4 @@
-# style-ppx
+# style-ppx - experimental CSS-in-JS like API in Reason
 ![](https://github.com/cem2ran/style-ppx/workflows/style_ppx%20pipeline/badge.svg)
 A project that includes the minimum configuration for a [ppx](https://blog.hackages.io/reasonml-ppx-8ecd663d5640) called `style_ppx`, a project that uses Reason and [Esy](https://github.com/esy-ocaml/esy).
 
@@ -64,3 +64,8 @@ Check the readmes on each example folder:
 
 - [BuckleScript](test_bs/README.md)
 - [Native](test_native/README.md)
+
+## Attribution
+
+- The PPX is heavily based on the following project: https://github.com/odis-labs/ppx_obj_make
+- If you need something that is far more complete and actually used in production try [styled-ppx](https://github.com/davesnx/styled-ppx)
