@@ -1,7 +1,5 @@
 # style-ppx
-
 ![](https://github.com/cem2ran/style-ppx/workflows/style_ppx%20pipeline/badge.svg)
-
 A project that includes the minimum configuration for a [ppx](https://blog.hackages.io/reasonml-ppx-8ecd663d5640) called `style_ppx`, a project that uses Reason and [Esy](https://github.com/esy-ocaml/esy).
 
 `style_ppx` implements a ppx that applies the record or object to the `make` function defined in the Style module.
@@ -11,7 +9,7 @@ So, the code:
 ```reason
 
 module Style = {
-  let make = (~backgroundColor, ~width, ~height, ()) = ...;
+  let make = (~backgroundColor, ~width, ~height, ()) => ...;
 };
 
 // Record style
