@@ -9,14 +9,14 @@
       "source": { "type": "link-dev", "path": ".", "manifest": "esy.json" },
       "overrides": [],
       "dependencies": [
-        "ppx_style@link-dev:..", "ocaml@4.6.1000@d41d8cd9",
+        "style_ppx@link-dev:..", "ocaml@4.6.1000@d41d8cd9",
         "@opam/reason@opam:3.5.2@f689c2cb", "@opam/dune@opam:2.0.1@5dc56bd0"
       ],
       "devDependencies": [ "@opam/merlin@opam:3.3.3@d653b06a" ]
     },
-    "ppx_style@link-dev:..": {
-      "id": "ppx_style@link-dev:..",
-      "name": "ppx_style",
+    "style_ppx@link-dev:..": {
+      "id": "style_ppx@link-dev:..",
+      "name": "style_ppx",
       "version": "link-dev:..",
       "source": { "type": "link-dev", "path": ".." },
       "overrides": [],

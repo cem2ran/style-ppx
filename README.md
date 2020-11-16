@@ -1,10 +1,10 @@
 # style-ppx
 
-![](https://github.com/cem2ran/style-ppx/workflows/ppx_style%20pipeline/badge.svg)
+![](https://github.com/cem2ran/style-ppx/workflows/style_ppx%20pipeline/badge.svg)
 
-A project that includes the minimum configuration for a [ppx](https://blog.hackages.io/reasonml-ppx-8ecd663d5640) called `ppx_style`, a project that uses Reason and [Esy](https://github.com/esy-ocaml/esy).
+A project that includes the minimum configuration for a [ppx](https://blog.hackages.io/reasonml-ppx-8ecd663d5640) called `style_ppx`, a project that uses Reason and [Esy](https://github.com/esy-ocaml/esy).
 
-`ppx_style` implements a ppx that applies the record or object to the `make` function defined in the Style module.
+`style_ppx` implements a ppx that applies the record or object to the `make` function defined in the Style module.
 
 So, the code:
 
@@ -41,7 +41,7 @@ to use the ppx in different projects:
 - The library: located under `lib` folder. It is used directly by native projects, and indirectly by BuckleScript projects
 - The standalone binary: BuckleScript does not provide a way to compose multiple ppxs together, so each ppx gets called individually, getting a serialized version of the AST, using the `-ppx` compiler flag behind the scenes. This can be configured in BuckleScript projects by using the `ppx-flags` key in `bsconfig.json` (see "Examples" section below).
 
-For this reason, `ppx_style` exposes an executable that can be consumed by BuckleScript projects.
+For this reason, `style_ppx` exposes an executable that can be consumed by BuckleScript projects.
 
 ## Examples
 

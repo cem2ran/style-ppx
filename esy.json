@@ -1,5 +1,5 @@
 {
-  "name": "ppx_style",
+  "name": "style_ppx",
   "esy": {
     "build": "dune build -p #{self.name}"
   },

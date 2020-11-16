@@ -13,16 +13,16 @@ if (platform === "win32") {
   platform = "win";
 }
 
-var filename = "bin/ppx_style-" + platform + "-" + arch + ".exe";
+var filename = "bin/style_ppx-" + platform + "-" + arch + ".exe";
 var supported = fs.existsSync(filename);
 
 if (!supported) {
-  console.error("ppx_style does not support this platform :(");
+  console.error("style_ppx does not support this platform :(");
   console.error("");
-  console.error("ppx_style comes prepacked as built binaries to avoid large");
+  console.error("style_ppx comes prepacked as built binaries to avoid large");
   console.error("dependencies at build-time.");
   console.error("");
-  console.error("If you want ppx_style to support this platform natively,");
+  console.error("If you want style_ppx to support this platform natively,");
   console.error("please open an issue at our repository, linked above. Please");
   console.error("specify that you are on the " + platform + " platform,");
   console.error("on the " + arch + " architecture.");

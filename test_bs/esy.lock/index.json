@@ -8,12 +8,12 @@
       "version": "link-dev:./esy.json",
       "source": { "type": "link-dev", "path": ".", "manifest": "esy.json" },
       "overrides": [],
-      "dependencies": [ "ppx_style@link:.." ],
+      "dependencies": [ "style_ppx@link:.." ],
       "devDependencies": []
     },
-    "ppx_style@link:..": {
-      "id": "ppx_style@link:..",
-      "name": "ppx_style",
+    "style_ppx@link:..": {
+      "id": "style_ppx@link:..",
+      "name": "style_ppx",
       "version": "link:..",
       "source": { "type": "link", "path": ".." },
       "overrides": [],

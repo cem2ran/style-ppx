@@ -1,6 +1,6 @@
 (library
-  (name ppx_style)
-  (public_name ppx_style.lib)
+  (name style_ppx)
+  (public_name style_ppx.lib)
   (libraries ocaml-migrate-parsetree)
   (kind ppx_rewriter)
 )

@@ -175,6 +175,6 @@ let rec expr = (mapper, e) =>
 let () = {
   let rewriter = (_config, _cookies) => {...default_mapper, expr};
   Migrate_parsetree.(
-    Driver.register(~name="ppx_style", Versions.ocaml_406, rewriter)
+    Driver.register(~name="style_ppx", Versions.ocaml_406, rewriter)
   );
 };

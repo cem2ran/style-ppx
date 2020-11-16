@@ -6,7 +6,7 @@
     "build": ["dune build -p my_native_app"]
   },
   "dependencies": {
-    "ppx_style": "*",
+    "style_ppx": "*",
     "ocaml": "~4.6.1000",
     "@opam/dune": "*",
     "@opam/reason": "*"
@@ -15,6 +15,6 @@
     "@opam/merlin": "*"
   },
   "resolutions": {
-    "ppx_style": "link-dev:.."
+    "style_ppx": "link-dev:.."
   }
 }
