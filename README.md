@@ -11,17 +11,27 @@ So, the code:
 ```reason
 
 module Style = {
-    let make = (~backgroundColor, ~width, ~height, ()) = ...;
+  let make = (~backgroundColor, ~width, ~height, ()) = ...;
 };
 
 // Record style
-Style({backgroundColor: "papayawhip", width: 42.->dp, height: 42.->dp});
+Style({
+  backgroundColor: "papayawhip",
+  width: 42.->dp,
+  height: 42.->dp
+});
+
 // Object style
-Style({"backgroundColor": "papayawhip", "width": 42.->dp, "height": 42.->dp});
+Style({
+  "backgroundColor": "papayawhip",
+  "width": 42.->dp,
+  "height": 42.->dp
+});
+
 // dp is also now the default for float values for attributes of "size" type
 Style({
   backgroundColor: "papayawhip",
-  width: 42., // <-- look ma no dp!
+  width: 42., // <-- look ma' no dp!
   height: 42.->dp,
   flex: 1., // <-- ppx does not touch this because it isn't a "size" attribute
 });
@@ -30,7 +40,12 @@ Style({
 Is transformed into:
 
 ```reason
-make(~backgroundColor="papayawhip", ~width=42.->dp, ~height=42.->dp, ());
+make(
+  ~backgroundColor="papayawhip",
+  ~width=42.->dp,
+  ~height=42.->dp,
+  ()
+);
 ```
 
 ## Files and folders
